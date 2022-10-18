@@ -1,14 +1,14 @@
 import axios from "axios";
-import { API_URL } from "../../../contanst/api";
+import { API_URL } from "../../../constant/api";
 
-export const getAllEmployee = () => {
-  return axios.get(`${API_URL}/employee`);
+export const getAllReport = () => {
+  return axios.get(`${API_URL}/report`);
 };
 
-export const deleteEmployee = (id) => {
-  return axios.delete(`${API_URL}/employee/${id}`);
+export const deleteReport = (id) => {
+  return axios.delete(`${API_URL}/report/${id}`);
 };
 
-export const getEmployeeByParams = (params) => {
-  return axios.post(`${API_URL}/employee`, params);
+export const getReportByParams = (params) => {
+  return axios.post(`${API_URL}/report`, params);
 };

@@ -3,7 +3,10 @@ import { Menu } from "antd";
 import {
   AppstoreOutlined,
   MailOutlined,
-  SettingOutlined,
+  CalendarOutlined,
+  StarOutlined,
+  UserSwitchOutlined,
+  RotateLeftOutlined,
 } from "@ant-design/icons";
 import styled from "styled-components";
 import {
@@ -24,8 +27,12 @@ export default function Layout({ children }) {
     };
   }
   const items = [
-    getItem("Navigation One", "employee", <MailOutlined />),
-    getItem("Navigation Two", "report", <AppstoreOutlined />),
+    getItem("Employee", "employee", <MailOutlined />),
+    getItem("Report", "report", <AppstoreOutlined />),
+    getItem("Praise", "praise", <StarOutlined />),
+    getItem("Discipline", "discipline", <UserSwitchOutlined />),
+    getItem("Appoint", "appoint", <CalendarOutlined/>),
+    getItem("Dismissed", "dismissed", <RotateLeftOutlined />),
   ];
   const navigate = useNavigate();
   const onClick = (e) => {

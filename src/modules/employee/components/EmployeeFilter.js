@@ -29,7 +29,7 @@ export default function EmployeeFilter({ filter, onChangeFilter, onSubmit }) {
         </Col>
         <Col>
           <Button htmlType="submit" type="primary">
-            Search
+            Add
           </Button>
         </Col>
       </Row>

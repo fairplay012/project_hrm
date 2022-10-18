@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-export const useEmployee = () => {
+export const useReport = () => {
   const [form, setForm] = useState();
-  const [employee, setEmployee] = useState([]);
+  const [report, setReport] = useState([]);
   const [loading, setLoading] = useState(false);
   const onChangeFilter = ({ key, value }) => {
     return setForm({ ...form, [key]: value });
@@ -10,8 +10,8 @@ export const useEmployee = () => {
   return {
     filter: form,
     onChangeFilter,
-    employee,
-    setEmployee,
+    report,
+    setReport,
     loading,
     setLoading,
   };

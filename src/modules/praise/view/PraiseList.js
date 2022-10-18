@@ -2,25 +2,25 @@ import { PageHeader } from "antd";
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import Layout from "../../layout/Layout";
-import ReportFilter from "../components/ReportFilter";
-import ReportTable from "../components/ReportTable";
-import { useReport } from "../hooks/useReport";
-import { getAllReport, getReportByParams } from "../utils/api";
+import PraiseFilter from "../components/PraiseFilter";
+import PraiseTable from "../components/PraiseTable";
+import { usePraise } from "../hooks/useEmployee";
+import { getAllPraise, getPraiseByParams } from "../utils/api";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
 const MySwal = withReactContent(Swal);
 
-export default function ReportList() {
-  const { filter, onChangeFilter, report, setReport, loading, setLoading } =
-  useReport();
+export default function PraiseList() {
+  const { filter, onChangeFilter, praise, setPraise, loading, setLoading } =
+    usePraise();
   const getData = async (params) => {
     try {
       setLoading(true);
       const { data } = !params
-        ? await getAllReport()
-        : await getReportByParams(params);
-        setReport(data);
+        ? await getAllPraise()
+        : await getPraiseByParams(params);
+      setPraise(data);
     } catch (error) {
       MySwal.fire("Error");
     }
@@ -40,16 +40,16 @@ export default function ReportList() {
   return (
     <Layout>
       <Container>
-        <PageHeader onBack={() => null} title="Report" />
-        <ReportFilter
+        <PageHeader onBack={() => null} title="Praise" />
+        <PraiseFilter
           filter={filter}
           onChangeFilter={onChangeFilter}
           onSubmit={onSubmit}
         />
-        <ReportTable
+        <PraiseTable
           filter={filter}
           onChangeFilter={onChangeFilter}
-          report={report}
+          praise={praise}
           getData={getData}
           loading={loading}
           setLoading={setLoading}

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_URL } from "../../../contanst/api";
+import { API_URL } from "../../../constant/api";
 
 export const getAllEmployee = () => {
   return axios.get(`${API_URL}/employee`);
