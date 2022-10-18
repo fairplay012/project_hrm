@@ -1,6 +1,7 @@
 import { Button, Space, Table, Tag } from "antd";
 import React from "react";
 import { deleteEmployee } from "../utils/api";
+import styled from "styled-components";
 
 export default function EmployeeTable({
   employee,
@@ -21,7 +22,7 @@ export default function EmployeeTable({
       title: "Name",
       dataIndex: "name",
       key: "name",
-      render: (text) => <div>{text}</div>,
+      render: (text) => <Name>{text}</Name>,
     },
     {
       title: "Sex",
@@ -59,3 +60,7 @@ export default function EmployeeTable({
 
   return <Table columns={columns} dataSource={employee} loading={loading} />;
 }
+
+const Name = styled.div`
+  color: red;
+`;
